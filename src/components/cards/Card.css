@@ -1,6 +1,6 @@
 .card-parent-div {
   width: 300px;
-  height: 500px;
+  min-height: 500px;
   border-radius: 8px;
   border: 1px solid #95a0a7;
   display: flex;
@@ -9,6 +9,7 @@
   justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: #ffffff;
 }
 
 .card-parent-div:hover {
@@ -106,7 +107,7 @@
   line-height: normal;
   letter-spacing: 0.188px;
   gap: 5px;
-  padding: 15px 0;
+  height: 60px;
 }
 
 .btn-add-to-cart:hover {

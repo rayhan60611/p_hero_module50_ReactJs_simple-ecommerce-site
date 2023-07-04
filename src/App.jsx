@@ -1,5 +1,4 @@
 import "./App.css";
-import Card from "./components/cards/Card";
 import Header from "./components/header/Header";
 import Shop from "./components/shop/Shop";
 // import Login from "./components/login/Login";
@@ -7,10 +6,9 @@ import Shop from "./components/shop/Shop";
 function App() {
   return (
     <div>
-      {/* <Header></Header> */}
-      <Card></Card>
+      <Header></Header>
       {/* <Login></Login> */}
-      {/* <Shop></Shop> */}
+      <Shop></Shop>
     </div>
   );
 }

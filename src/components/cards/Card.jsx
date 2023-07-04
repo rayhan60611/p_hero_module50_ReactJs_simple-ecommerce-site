@@ -1,28 +1,28 @@
 // import React from "react";
 import "./Card.css";
+import noImage from "../../assets/images/NoImageFound.jpg.png";
 
-const Card = () => {
+const Card = (props) => {
+  // console.log(props.product);
+  const { name, price, ratings, img, seller } = props.product;
   return (
     <div className="card-parent-div">
       <div className="card-inner-div">
         <div className="card-img-div">
-          <img
-            src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg"
-            alt=""
-          />
+          <img src={img ? img : noImage} alt="" />
         </div>
         <div className="card-title-div">
-          <h4>Product Title</h4>
+          <h4>{name}</h4>
           <p>
-            Price: $<span>190</span>
+            Price: $<span>{price}</span>
           </p>
         </div>
         <div className="card-Manufacturer-div">
           <h4>
-            Manufacturer : <span>Addidas</span>
+            Manufacturer : <span>{seller}</span>
           </h4>
           <p>
-            Rating: <span>3</span> Star
+            Rating: <span>3</span> {ratings}
           </p>
         </div>
       </div>

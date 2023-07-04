@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./Shop.css";
 import { useEffect } from "react";
+import Card from "../cards/Card";
 
 const Shop = () => {
   // using state to read and set data
@@ -14,8 +15,13 @@ const Shop = () => {
   }, []);
   return (
     <div className="shop-container">
-      <div className="product-container">
-        <h4>All Products</h4>
+      <div>
+        <h4 className="shop-title-h4">Total Products: {products.length}</h4>
+        <div className="product-container">
+          {products.map((product) => {
+            return <Card key={product.id} product={product}></Card>;
+          })}
+        </div>
       </div>
       <div className="cart-container">
         <h4>Order Summary</h4>

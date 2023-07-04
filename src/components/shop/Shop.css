@@ -1,0 +1,12 @@
+.shop-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.product-container {
+  background-color: rgba(69, 164, 82, 0.387);
+}
+
+.cart-container {
+  background-color: bisque;
+}

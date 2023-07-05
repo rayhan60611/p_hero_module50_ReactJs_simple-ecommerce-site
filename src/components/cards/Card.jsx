@@ -1,15 +1,24 @@
 // import React from "react";
 import "./Card.css";
 import noImage from "../../assets/images/NoImageFound.jpg.png";
+import { useEffect, useState } from "react";
 
 const Card = (props) => {
   // console.log(props.product);
   const { name, price, ratings, img, seller } = props.product;
+  const [status, setStatus] = useState(0);
+  useEffect(() => {
+    fetch(img)
+      .then((res) => setStatus(res.status))
+      .catch((err) => {
+        console.log("catch", err);
+      });
+  }, [img]);
   return (
     <div className="card-parent-div">
       <div className="card-inner-div">
         <div className="card-img-div">
-          <img src={img ? img : noImage} alt="" />
+          <img src={status == 200 ? img : noImage} alt="" />
         </div>
         <div className="card-title-div">
           <h4>{name}</h4>

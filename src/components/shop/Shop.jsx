@@ -11,7 +11,10 @@ const Shop = () => {
   useEffect(() => {
     fetch("../../../db/products.json")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data))
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <div className="shop-container">

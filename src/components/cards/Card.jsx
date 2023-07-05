@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const Card = (props) => {
   // console.log(props.product);
   const { name, price, ratings, img, seller } = props.product;
+  const handleAddToCart = props.handleAddToCart;
   const [status, setStatus] = useState(0);
   useEffect(() => {
     fetch(img)
@@ -14,6 +15,7 @@ const Card = (props) => {
         console.log("catch", err);
       });
   }, [img]);
+
   return (
     <div className="card-parent-div">
       <div className="card-inner-div">
@@ -35,7 +37,12 @@ const Card = (props) => {
           </p>
         </div>
       </div>
-      <button className="btn-add-to-cart">
+      <button
+        onClick={() => {
+          handleAddToCart(props.product);
+        }}
+        className="btn-add-to-cart"
+      >
         Add to Cart <ion-icon name="cart"></ion-icon>
       </button>
     </div>

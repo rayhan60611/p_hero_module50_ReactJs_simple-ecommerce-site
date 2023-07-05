@@ -1,4 +1,4 @@
-.card-parent-div {
+.product-parent-div {
   width: 300px;
   min-height: 500px;
   border-radius: 8px;
@@ -12,37 +12,37 @@
   background-color: #ffffff;
 }
 
-.card-parent-div:hover {
+.product-parent-div:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
   transition: box-shadow 0.8s ease-in-out;
 }
 
-.card-inner-div {
+.product-inner-div {
   padding: 8px;
   /* background-color: rgb(255, 196, 253); */
 }
 
-.card-img-div {
+.product-img-div {
   width: 286px;
   height: 286px;
   border-radius: 8px;
 }
 
-.card-img-div img {
+.product-img-div img {
   width: 100%;
   border-radius: 8px;
 }
 
-.card-title-div,
-.card-Manufacturer-div {
+.product-title-div,
+.product-Manufacturer-div {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0 15px;
 }
 
-.card-title-div h4 {
+.product-title-div h4 {
   margin: 16px 0 5px 0;
   color: #0e161a;
   font-size: 21px;
@@ -53,7 +53,7 @@
   letter-spacing: 0.032px;
 }
 
-.card-title-div p {
+.product-title-div p {
   margin: 5px 0 5px 0;
 
   color: #0e161a;
@@ -65,7 +65,7 @@
   letter-spacing: 0.026px;
 }
 
-.card-Manufacturer-div h4 {
+.product-Manufacturer-div h4 {
   margin: 16px 0 5px 0;
   color: #2a414f;
   font-size: 12px;
@@ -76,7 +76,7 @@
   letter-spacing: 0.048px;
 }
 
-.card-Manufacturer-div p {
+.product-Manufacturer-div p {
   margin: 5px 0 10px 0;
   color: #2a414f;
   font-size: 12px;

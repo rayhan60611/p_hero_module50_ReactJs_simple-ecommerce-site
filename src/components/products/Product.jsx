@@ -1,9 +1,9 @@
 // import React from "react";
-import "./Card.css";
+import "./Product.css";
 import noImage from "../../assets/images/NoImageFound.jpg.png";
 import { useEffect, useState } from "react";
 
-const Card = (props) => {
+const Product = (props) => {
   // console.log(props.product);
   const { name, price, ratings, img, seller } = props.product;
   const handleAddToCart = props.handleAddToCart;
@@ -17,18 +17,18 @@ const Card = (props) => {
   }, [img]);
 
   return (
-    <div className="card-parent-div">
-      <div className="card-inner-div">
-        <div className="card-img-div">
+    <div className="product-parent-div">
+      <div className="product-inner-div">
+        <div className="product-img-div">
           <img src={status == 200 ? img : noImage} alt="" />
         </div>
-        <div className="card-title-div">
+        <div className="product-title-div">
           <h4>{name}</h4>
           <p>
             Price: $<span>{price}</span>
           </p>
         </div>
-        <div className="card-Manufacturer-div">
+        <div className="product-Manufacturer-div">
           <h4>
             Manufacturer : <span>{seller}</span>
           </h4>
@@ -49,4 +49,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default Product;

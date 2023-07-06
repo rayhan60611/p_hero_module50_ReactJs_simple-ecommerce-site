@@ -4,12 +4,13 @@ import "./Shop.css";
 import { useEffect } from "react";
 import Product from "../products/Product";
 import Cart from "../cart/Cart";
+import { addToCart, getShoppingCart } from "../../utilities/localStorage";
 
 const Shop = () => {
   // using state to read and set data
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-
+  // fetching data from API
   useEffect(() => {
     fetch("../../../db/products.json")
       .then((res) => res.json())
@@ -18,10 +19,15 @@ const Shop = () => {
         console.log(err);
       });
   }, []);
+  //saving data to local storage
+  useEffect(() => {
+    const shoppingCart = getShoppingCart();
+  }, []);
 
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
+    addToCart(product.id);
   };
   return (
     <div className="shop-container">

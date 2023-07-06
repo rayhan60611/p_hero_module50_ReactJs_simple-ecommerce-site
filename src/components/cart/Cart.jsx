@@ -1,4 +1,5 @@
 // import React from "react";
+import { deleteCart } from "../../utilities/localStorage";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
@@ -26,7 +27,12 @@ const Cart = ({ cart }) => {
         </h4>
       </div>
       <div className="btn-container">
-        <button className="btn-clear-cart">
+        <button
+          onClick={() => {
+            deleteCart();
+          }}
+          className="btn-clear-cart"
+        >
           Clear Cart <ion-icon name="trash-outline"></ion-icon>
         </button>
         <button className="btn-review-order">

@@ -7,6 +7,7 @@ const Product = (props) => {
   // console.log(props.product);
   const { name, price, ratings, img, seller } = props.product;
   const handleAddToCart = props.handleAddToCart;
+  // checking falty image link
   const [status, setStatus] = useState(0);
   useEffect(() => {
     fetch(img)

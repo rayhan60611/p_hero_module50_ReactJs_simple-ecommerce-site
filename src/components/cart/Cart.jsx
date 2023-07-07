@@ -1,13 +1,18 @@
 // import React from "react";
 import { deleteCart } from "../../utilities/localStorage";
+import Product from "../products/Product";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
+  console.log(cart);
   let totalPrice = 0;
   let totalShippingPrice = 0;
+  let quantity = 0;
   for (const item of cart) {
-    totalPrice += item.price;
-    totalShippingPrice += item.shipping;
+    // item.quantity = item.quantity || 1;
+    totalPrice += item.price * item.quantity;
+    totalShippingPrice += item.shipping * item.quantity;
+    quantity = quantity + item.quantity;
   }
   const tax = ((totalPrice + totalShippingPrice) * 7) / 100;
   const grandTotal = totalPrice + totalShippingPrice + tax;
@@ -16,7 +21,7 @@ const Cart = ({ cart }) => {
     <div className="card-div">
       <div className="cart-bill-container">
         <h4 className="cart-bill-h4">Order Summary</h4>
-        <p className="cart-bill-p">Selected Items: {cart.length}</p>
+        <p className="cart-bill-p">Selected Items: {quantity}</p>
         <p className="cart-bill-p">Total Price: ${totalPrice}</p>
         <p className="cart-bill-p">
           Total Shipping Charge: ${totalShippingPrice}

@@ -19,7 +19,7 @@ const Shop = () => {
         // console.log(err);
       });
   }, []);
-  //saving data to local storage
+  //getting data from localStorage and seting it to  SetCart State
   useEffect(() => {
     const shoppingCart = getShoppingCart();
     const savedCart = [];
@@ -44,7 +44,6 @@ const Shop = () => {
 
   const handleAddToCart = (product) => {
     // const newCart = [...cart, product];
-
     let newCart = [];
     const exists = cart.find((pd) => pd.id === product.id);
     if (!exists) {

@@ -1,6 +1,6 @@
 // import React from "react";
 import { deleteCart } from "../../utilities/localStorage";
-import Product from "../products/Product";
+// import Product from "../products/Product";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
@@ -11,7 +11,7 @@ const Cart = ({ cart }) => {
   for (const item of cart) {
     // item.quantity = item.quantity || 1;
     totalPrice += item.price * item.quantity;
-    totalShippingPrice += item.shipping * item.quantity;
+    totalShippingPrice += item.shipping;
     quantity = quantity + item.quantity;
   }
   const tax = ((totalPrice + totalShippingPrice) * 7) / 100;
